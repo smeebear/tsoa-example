@@ -1,8 +1,12 @@
 {
   "name": "tsoa-example",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/src/server.js",
   "license": "MIT",
+  "scripts": {
+    "build": "tsoa spec-and-routes && tsc",
+    "start": "node build/src/server.js"
+  },
   "dependencies": {
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
