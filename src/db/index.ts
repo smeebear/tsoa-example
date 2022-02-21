@@ -47,4 +47,5 @@ export const configure = async () => {
 		}
 		retry = false;
 	} while (retry);
+    return;
 };
