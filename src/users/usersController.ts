@@ -15,6 +15,10 @@ import { UsersService, UserCreationParams } from './usersService';
 
 @Route("users")
 export class UsersController extends Controller {
+    /**
+     * Retrieves the details of an existing user.
+     * Supply the unique user ID from either and recieve the corresponding user details.
+     */
     @Get("{userId}")
     public async getUser (
         @Path() userId: number,
