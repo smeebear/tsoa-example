@@ -18,6 +18,8 @@ export class UsersController extends Controller {
     /**
      * Retrieves the details of an existing user.
      * Supply the unique user ID from either and recieve the corresponding user details.
+     * @param userId The user's identifier
+     * @param name Provide a username to display
      */
     @Get("{userId}")
     public async getUser (
