@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const {
-	DEV,
-	DB_URL,
-	DB_USER,
-	DB_PASS,
-	DB_NAME,
+	DEV = "true",
+	DB_URL = "mongo",
+	DB_USER = "admin",
+	DB_PASS = "password",
+	DB_NAME = "tsoa-test",
 	DB_RETRY,
 	DB_RETRY_INTERVAL = '3000',
 	DB_RETRY_ATTEMPTS = '1',
