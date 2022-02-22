@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const {
 	DEV = "true",
-	DB_URL = "mongo",
+	DB_URL = "localhost:27017",
 	DB_USER = "admin",
 	DB_PASS = "password",
 	DB_NAME = "tsoa-test",
