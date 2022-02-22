@@ -2,7 +2,6 @@ import {
     Body,
     Controller,
     Get,
-    Path,
     Post,
     Query,
     Route,
@@ -23,10 +22,9 @@ export class UsersController extends Controller {
      */
     @Get("{userId}")
     public async getUser (
-        @Path() userId: number,
-        @Query() name?: string
+        @Query() name: string
     ): Promise<User> {
-        return new UsersService().get(userId, name);
+        return new UsersService().get(name);
     }
 
     @SuccessResponse("201", "Created")

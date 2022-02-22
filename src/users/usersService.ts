@@ -3,9 +3,9 @@ import { User } from "./users";
 export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">
 
 export class UsersService {
-    public get(id: number, name?: string): User {
+    public get(name: string): User {
         return {
-            id,
+            // id,
             email: "sam@ordyr.io",
             name: name ?? "Sam O",
             status: "Happy",
@@ -15,7 +15,7 @@ export class UsersService {
 
     public create(userCreationParams: UserCreationParams): User {
         return {
-            id: Math.floor(Math.random() * 10000),
+            // id: Math.floor(Math.random() * 10000),
             status: "Happy",
             ...userCreationParams,
         }
