@@ -1,19 +1,19 @@
-import { User } from "./users";
+import { Users, UserDoc } from "./usersModel";
 
-export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">
+// export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">
 
 export class UsersService {
-    public get(name: string): User {
-        return {
-            // id,
-            email: "sam@ordyr.io",
-            name: name ?? "Sam O",
-            status: "Happy",
-            phoneNumbers: [],
-        };
+    public async get(name: string): Promise<UserDoc> {
+        try {
+            let user: UserDoc | null = await Users.findOne({ name: name }).exec()
+            if (user === null) throw "Couldn't find a user"
+            return user;
+        } catch (err) {
+            throw err
+        }
     }
 
-    public create(userCreationParams: UserCreationParams): User {
+    public create(userCreationParams: any) {
         return {
             // id: Math.floor(Math.random() * 10000),
             status: "Happy",
