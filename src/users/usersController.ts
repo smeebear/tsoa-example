@@ -27,6 +27,10 @@ export class UsersController extends Controller {
         return new UsersService().get(name);
     }
 
+    /**
+     * Posts a user to the database.
+     * @param requestBody The user to create. Requires a name, an email, and a phone number.
+     */
     @SuccessResponse("201", "Created")
     @Post()
     public async createUser(
