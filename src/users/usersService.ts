@@ -1,6 +1,7 @@
 import { Users, UserDoc } from "./usersModel";
+import { User } from './users'
 
-// export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">
+export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">
 
 export class UsersService {
     public async get(name: string): Promise<UserDoc> {
