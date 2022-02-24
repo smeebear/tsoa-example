@@ -14,7 +14,7 @@ export class UsersService {
         }
     }
 
-    public create(userCreationParams: any) {
+    public create(userCreationParams: UserCreationParams) {
         return {
             // id: Math.floor(Math.random() * 10000),
             status: "Happy",
