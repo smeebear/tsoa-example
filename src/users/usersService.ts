@@ -14,7 +14,15 @@ export class UsersService {
         }
     }
 
-    public create(userCreationParams: UserCreationParams) {
+    public async create(userCreationParams: UserCreationParams): Promise<void> {
+        try {
+            let user = await Users.create( {
+                ...userCreationParams
+            })
+            await user.save()
+        } catch (err) {
+            console.warn(err);
+        }
         return
     }
 }
